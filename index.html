@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; img-src 'self' data: https://i.imgur.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://formsubmit.co">
+    <title>Priscila Piantanida | Artista-Pesquisadora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&family=Crimson+Pro&display=swap">
+    <link rel="icon" type="image/png" href="/image/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/image/favicon.svg" />
+    <link rel="shortcut icon" href="/image/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/image/apple-touch-icon.png" />
+    <link rel="manifest" href="/image/site.webmanifest" />
+    <style type="text/tailwindcss">
+        @layer base {
+            .slide, .eco-slide {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease;
+            }
+            .eco-slide img {
+                max-height: 100%;
+                max-width: 100%;
+                object-fit: contain;
+            }
+            .relative.h-96.md\\:h-\\[70vh\\] .absolute.inset-0.flex > div {
+                display: none;
+            }
+            .relative.h-96.md\\:h-\\[70vh\\] .absolute.inset-0.flex > div:first-child {
+                display: block;
+            }
+            .slide.active {
+                opacity: 1;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: 'Work Sans', sans-serif;
+                @apply bg-stone-50 text-stone-800;
+            }
+            h1, h2, h3 {
+                font-family: 'Crimson Pro', serif;
+            }
+            .custom-shadow {
+                box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.06);
+            }
+        }
+        @layer components {
+            .nav-link {
+                @apply px-3 py-1 transition-colors duration-300 hover:text-emerald-800;
+            }
+            .gallery-item {
+                @apply rounded-lg overflow-hidden transform transition-all duration-500 hover:scale-[1.02] hover:shadow-lg;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-stone-50 bg-opacity-90 backdrop-blur-sm border-b border-stone-200">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-medium text-emerald-800">Priscila Piantanida</a>
+            <div class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#inicio" class="nav-link">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#portfolio" class="nav-link">Obras</a></li>
+                    <li><a href="#pesquisa" class="nav-link">Pesquisa</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-100">
+            <div class="px-4 py-2 space-y-1">
+                <a href="#inicio" class="block px-3 py-2 nav-link">Início</a>
+                <a href="#sobre" class="block px-3 py-2 nav-link">Sobre</a>
+                <a href="#portfolio" class="block px-3 py-2 nav-link">Obras</a>
+                <a href="#pesquisa" class="block px-3 py-2 nav-link">Pesquisa</a>
+
+                <a href="#contato" class="block px-3 py-2 nav-link">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative mb-16">
+        <div class="relative h-96 md:h-[70vh] w-full overflow-hidden bg-stone-200">
+            <!-- Image Banner -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-100">
+                <div class="w-1/4 h-full bg-[url('https://i.imgur.com/oDJaWgn.jpeg')] bg-cover bg-center opacity-100"></div>
+                <div class="w-1/2 h-full bg-[url('https://i.imgur.com/ju808x5.jpeg')] bg-cover bg-center opacity-100"></div>
+                <div class="w-1/4 h-full bg-[url('https://i.imgur.com/PECPJnu.jpeg')] bg-cover bg-center opacity-100"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="container mx-auto px-4 text-center">
+                    <div class="bg-black bg-opacity-30 backdrop-blur-sm rounded-lg p-6 md:p-8 inline-block">
+                        <h1 class="text-3xl md:text-5xl font-medium text-emerald-100 mb-6">
+                            "Arte como ecossistema vivo"
+                        </h1>
+                        <p class="text-lg text-emerald-50 max-w-2xl mx-auto">
+                            Esculturas ambientais e sociais nascidas da observação de sistemas criativos entre plantas, animais, construções e pessoas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Residência Artística Lightbox -->
+        <div id="residencia-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closeResidenciaLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                    <!-- Slides -->
+                    <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/F4UQWVZ.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Tuburan Eco-Commune">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/v6eP5jx.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/VzuiQIN.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/gC5qGuM.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/7fArV5u.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/HTI5BdS.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/MnWyrQV.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/IhtGeld.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/oLKnOtW.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/BumiGmW.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/5b6wnFs.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/7ihEo3K.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/P4tH25M.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/EcJ5Ijo.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <video src="https://i.imgur.com/m77saQy.mp4" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos" controls style="z-index: 10;">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/qfDppHN.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/KSiQJLG.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/QW4CW2z.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/k7KRWzA.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/LRTNqpK.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/VbTETuH.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/AWA6fGa.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/oRCKTOm.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/c6pt9FU.jpeg" class="max-h-full max-w-full object-contain" alt="Residência Artística - Processos criativos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-medium text-emerald-900">Residência Artística</h3>
+                        <p class="text-stone-700 italic">Tuburan Eco-Commune / Filipinas</p>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button onclick="prevResidenciaSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                <button onclick="nextResidenciaSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+            </div>
+        </div>
+        <!-- Mutatis Mutandis Lightbox -->
+        <div id="mutatis-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closeMutatisLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                    <!-- Slides -->
+                    <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/pHjAKuP.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Vista geral">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/sHhvhY2.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/B3iX8aO.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/3PLCoPR.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/CsR1FLu.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/C9DYHuy.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/0kUqqrq.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/8u0BkyH.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/AzwBGfH.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/StCV2Fl.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>                    
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/gJS6JZS.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/mxIAplN.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/Rr2fYXL.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/1vb22Nz.jpeg" class="max-h-full max-w-full object-contain" alt="Mutatis Mutandis - Detalhe">
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-medium text-emerald-900">Mutatis Mutandis</h3>
+                        <p class="text-stone-700 italic">Exposição coletiva</p>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button onclick="prevMutatisSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                <button onclick="nextMutatisSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Teresópolis SESC Lightbox -->
+        <div id="teresopolis-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closeTeresopolisLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                    <!-- Slides -->
+                    <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/YYnk0bH.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Vista geral">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/Tmr0K4I.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/4cwt1eS.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/k5PCHmU.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/fBkkiIe.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/0Oh56Bw.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/jp8xaj7.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/GC1yOeI.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/ySytQLV.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/lyYomFW.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/vfZBslu.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/UIM26Rx.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/LUSlwdm.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/T3xP5ch.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/Damld19.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/f0nulDg.jpeg" class="max-h-full max-w-full object-contain" alt="Exposição individual - Detalhe">
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-medium text-emerald-900">Exposição individual</h3>
+                        <p class="text-stone-700 italic">Teresópolis SESC</p>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button onclick="prevTeresopolisSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                <button onclick="nextTeresopolisSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-16 bg-emerald-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <!-- Portrait image placeholder -->
+                    <div class="rounded-lg overflow-hidden shadow-lg cursor-pointer aspect-square w-full max-w-md" onclick="openLightbox()">
+                        <div class="bg-[url('https://i.imgur.com/xa5H6lj.jpeg')] bg-cover bg-center h-full w-full"></div>
+                    </div>
+                    
+                    <!-- Lightbox -->
+                    <div id="lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+                        <div class="relative max-w-4xl w-full p-4 mx-auto">
+                            <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                            <div class="bg-white rounded-lg overflow-hidden relative">
+                                <!-- Slides -->
+                                <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                                    <div class="slide active">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/Fp3Jmh7.jpeg" class="max-h-full max-w-full object-contain" alt="Priscila Piantanida portrait">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/xa5H6lj.jpeg" class="max-h-full max-w-full object-contain" alt="Priscila Piantanida portrait">
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                                <div class="p-4 bg-white">
+                                    <h3 class="text-xl font-medium text-emerald-900">Priscila Piantanida</h3>
+                                    <p class="text-stone-700 italic">Artista-pesquisadora, escultora ambiental e social. (Brasil-Chile, nascida em 1981)</p>
+                                </div>
+                            </div>
+                            <!-- Navigation arrows -->
+                            <button onclick="prevAboutSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                            <button onclick="nextAboutSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-medium text-emerald-900 mb-6">Priscila Piantanida</h2>
+                    <p class="text-stone-700 mb-4 italic">
+                        Artista-pesquisadora, escultora ambiental e social. (Brasil-Chile, nascida em 1981)
+                    </p>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">
+                            Meu trabalho parte da observação e investigação de sistemas criativos e sustentáveis entre plantas, animais, construções e pessoas. Desenvolvo esculturas e arte expandida a partir de vivências em diferentes comunidades como aldeias indígenas, ocupações urbanas e residências ecológicas.
+                        </p>
+                        <p class="mb-4">
+                            Exploro as conexões entre permacultura, agroecologia e cultura diversa por meio de uma abordagem transdisciplinar e uma criação sensível.
+                        </p>
+                        <p>
+                            Estas vivências contextualizam o conceito de arte ampliada traduzidas em esculturas ambientais e sociais em um processo contínuo e vivo.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-emerald-200">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-4">Formação e Vivências</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-emerald-800 mr-2">•</span>
+                                <span>Graduação em Escultura: Escola de Belas Artes - EBA/UFRJ</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-800 mr-2">•</span>
+                                <span>Mestrado (UFF) - 'Plásticas Ambientais: Esculturas de Transbordas'</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-800 mr-2">•</span>
+                                <span>Residência artística em Tuburan Eco-Commune (Filipinas)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-emerald-800 mr-2">•</span>
+                                <span>Pesquisadora da cultura Guarani Mbyá</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horta Urbana Lightbox -->
+        <div id="horta-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closeHortaLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                    <!-- Slides -->
+                    <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/UAcyz7t.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/ej0hvQY.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Vista geral">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/lveEYwr.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/GZus6Gy.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/kfGyN3t.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>                      
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/UChgAlj.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/KsGN4A4.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/ZG3mh7w.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/VpqnQAo.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/4B87mqR.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/h8k4Lvy.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/22o3T2t.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/qD4HEvu.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/wOfjRm4.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/dpRahPq.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/2kOuqUw.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/CkESLOy.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/S5bn9F3.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/fLLzrPc.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/pCcwFK5.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/dPTGXzW.jpeg" class="max-h-full max-w-full object-contain" alt="Horta Urbana - Detalhe">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-medium text-emerald-900">Horta Urbana</h3>
+                        <p class="text-stone-700 italic">Quilombo das Guerreiras / Rio de Janeiro</p>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button onclick="prevHortaSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                <button onclick="nextHortaSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-stone-50">
+        <!-- Eco_operação Lightbox -->
+        <div id="eco-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closeEcoLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                               <!-- Slides -->
+                                <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                                    <div class="slide active">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/pPoAgNO.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/TnJfRn6.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/x8HjFv1.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/O4yNY1X.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/zuatra8.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/hQLM8UL.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/Q5NFLN7.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/XduMMTe.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/f19zcEZ.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/DrDm80Y.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/g9hC87z.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/CjC3KHv.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/pJuNeT2.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/ptCSBiP.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <div class="h-full w-full flex items-center justify-center bg-black">
+                                            <img src="https://i.imgur.com/jxVhapI.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-4 bg-white">
+                                    <h3 class="text-xl font-medium text-emerald-900">Eco_operação</h3>
+                                    <p class="text-stone-700 italic">Intervenção artística que explora as relações entre sistemas ecológicos e os espaços acadêmicos.</p>
+                                </div>
+                            </div>
+                            <!-- Navigation arrows -->
+                            <button onclick="prevEcoSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                            <button onclick="nextEcoSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+                        </div>
+                    </div>
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-medium text-center text-emerald-900 mb-12">Obras e Experiências</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- Project 3 -->
+                <div class="gallery-item" onclick="openTeresopolisLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/YYnk0bH.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Exposição individual</h3>
+                        <p class="text-stone-600 mb-2">Teresópolis SESC</p>
+                        <p class="text-stone-700">Mostra individual com obras recentes e instalações site-specific.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="gallery-item" onclick="openPiramideLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/CqLeEJh.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Pirâmide Cristalina</h3>
+                        <p class="text-stone-600 mb-2">Exposição: Parque de Esculturas no Jardim de Glaziou</p>
+                        <p class="text-stone-700">Instalação que explora as relações entre geometria sagrada e natureza.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="gallery-item" onclick="openMutatisLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/sHhvhY2.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Mutatis Mutandis</h3>
+                        <p class="text-stone-600 mb-2">Exposição coletiva</p>
+                        <p class="text-stone-700">Obra que explora transformações materiais e conceituais.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="gallery-item" onclick="openAliancaLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/9DcOAhJ.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Aliança Cristalina</h3>
+                        <p class="text-stone-600 mb-2">Exposição: Jardim Botânico</p>
+                        <p class="text-stone-700">Instalação que explora as conexões entre formas geométricas sagradas e o reino vegetal.</p>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="gallery-item" onclick="openResidenciaLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/MnWyrQV.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Residência Artística</h3>
+                        <p class="text-stone-600 mb-2">Tuburan Eco-Commune / Filipinas</p>
+                        <p class="text-stone-700">Vivência intercultural desenvolvendo esculturas vivas e processos criativos em ecovila.</p>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="gallery-item" onclick="openEscadaLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/3entiz7.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Escada Viva</h3>
+                        <p class="text-stone-600 mb-2">Intervenção urbana - Rio de Janeiro</p>
+                        <p class="text-stone-700">Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.</p>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="gallery-item" onclick="openEcoLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/pPoAgNO.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Eco_operação</h3>
+                        <p class="text-stone-600 mb-2">Ilha do Fundão / UFRJ</p>
+                        <p class="text-stone-700">Intervenção artística que explora as relações entre sistemas ecológicos e os espaços acadêmicos.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="gallery-item" onclick="openHortaLightbox()">
+                    <div class="bg-[url('https://i.imgur.com/ej0hvQY.jpeg')] bg-cover bg-center h-80 rounded-lg shadow-md"></div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-medium text-emerald-900 mb-1">Horta Urbana</h3>
+                        <p class="text-stone-600 mb-2">Quilombo das Guerreiras / Rio de Janeiro</p>
+                        <p class="text-stone-700">Projeto agroecológico comunitário que transforma espaços urbanos em sistemas alimentares sustentáveis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aliança Cristalina Lightbox -->
+        <div id="alianca-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closeAliancaLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                    <!-- Slides would go here -->
+                    <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                        <!-- Add slides for Aliança Cristalina here -->
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/lV6pVfB.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/aRNo2CR.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/9DcOAhJ.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/ZdmYMnb.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/BcAcfnX.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/PECPJnu.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/zDNxaJ2.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/5FwZ9Bu.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/Fx9Ls4G.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/MYNxx0W.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/wQr0Vc8.jpeg" class="max-h-full max-w-full object-contain" alt="Eco_operação - Vista geral da instalação na Ilha do Fundão">
+                            </div>
+                        </div>
+                        </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-medium text-emerald-900">Aliança Cristalina</h3>
+                        <p class="text-stone-700 italic">Exposição: Jardim Botânico</p>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button onclick="prevAliancaSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                <button onclick="nextAliancaSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Escada Viva Lightbox -->
+        <div id="escada-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closeEscadaLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                    <!-- Slides would go here -->
+                    <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                        <!-- Add slides for Escada Viva here -->
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/THSr1JA.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/tqSb2IH.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/izwgpMQ.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/3entiz7.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/slxP4Rj.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/tYnEFKw.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/kgJyGZe.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/YACS8gR.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/m3KYUZO.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/slxP4Rj.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/8PuepLK.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/499baui.png" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/xuXDswi.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/cylxPgR.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/X63Fsdq.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/hO4SCuC.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>   
+                        <div class="slide">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                            <img src="https://i.imgur.com/F6cbqs3.jpeg" class="max-h-full max-w-full object-contain" alt="Estrutura vegetal que reconecta espaços urbanos através do crescimento orgânico.">
+                            </div>
+                        </div>                         
+                        </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-medium text-emerald-900">Escada Viva</h3>
+                        <p class="text-stone-700 italic">Intervenção urbana - Rio de Janeiro</p>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button onclick="prevEscadaSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                <button onclick="nextEscadaSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Pirâmide Cristalina Lightbox -->
+        <div id="piramide-lightbox" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-90">
+            <div class="relative max-w-4xl w-full p-4 mx-auto">
+                <button onclick="closePiramideLightbox()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+                <div class="bg-white rounded-lg overflow-hidden relative">
+                    <!-- Slides -->
+                    <div class="slides-container h-[70vh] w-full relative overflow-hidden">
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/4OIf9Pf.jpeg" class="max-h-full max-w-full object-contain" alt="Pirâmide Cristalina - Vista geral">
+                            </div>
+                        </div>
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/1XuxgaQ.jpeg" class="max-h-full max-w-full object-contain" alt="Pirâmide Cristalina - Vista geral">
+                            </div>
+                        </div>
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/R5GdPEX.jpeg" class="max-h-full max-w-full object-contain" alt="Pirâmide Cristalina - Vista geral">
+                            </div>
+                        </div>
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/CqLeEJh.jpeg" class="max-h-full max-w-full object-contain" alt="Pirâmide Cristalina - Vista geral">
+                            </div>
+                        </div>
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/bLGXsgx.jpeg" class="max-h-full max-w-full object-contain" alt="Pirâmide Cristalina - Vista geral">
+                            </div>
+                        </div>                      
+                        <div class="slide active">
+                            <div class="h-full w-full flex items-center justify-center bg-black">
+                                <img src="https://i.imgur.com/WT8Ukfo.jpeg" class="max-h-full max-w-full object-contain" alt="Pirâmide Cristalina - Vista geral">
+                            </div>
+                        </div>                      
+                    </div>
+                    <div class="p-4 bg-white">
+                        <h3 class="text-xl font-medium text-emerald-900">Pirâmide Cristalina</h3>
+                        <p class="text-stone-700 italic">Exposição: Parque de Esculturas no Jardim de Glaziou</p>
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button onclick="prevPiramideSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10094;</button>
+                <button onclick="nextPiramideSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl z-10">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="pesquisa" class="py-16 bg-[#FEF3C7]">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-medium text-center text-emerald-900 mb-12">Pesquisa e Escrita</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <h3 class="text-2xl font-medium text-emerald-900 mb-4">"Plásticas Ambientais: Esculturas de Transbordas"</h3>
+                    <p class="text-stone-700 mb-6">
+                        Dissertação de mestrado que investiga as relações entre escultura, ambiente e práticas sustentáveis. Meu trabalho acadêmico reflete sobre como a arte pode transcender o objeto e se tornar parte viva de um ecossistema.
+                    </p>
+                    <a href="http://www.artes.uff.br/ppgca/pdfTesesDissertacoes/M024.114.023_PRISCILA_PIANTANIDA.pdf" 
+                       target="_blank" class="inline-flex items-center px-4 py-2 bg-amber-200 border border-amber-300 rounded-md text-amber-800 hover:bg-amber-300 transition-colors">
+                        Ler dissertação
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <h3 class="text-2xl font-medium text-emerald-900 mb-4">Pesquisa com a cultura Guarani Mbyá</h3>
+                    <p class="text-stone-700 mb-4">
+                        Como pesquisadora do Instituto Nós de Permacultura, desenvolvi trabalho junto ao grupo guarani Mbo Yty, atualmente localizado em Maricá/RJ. Esta pesquisa etnográfica aborda os conhecimentos tradicionais sobre relações ecológicas e seus diálogos com a arte contemporânea.
+                    </p>
+                    <p class="text-stone-700">
+                        Meu processo une investigação acadêmica e prática artística, buscando novas formas de relação entre humanos e não-humanos através das lentes da permacultura e da cosmologia indígena.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
+    <section id="contato" class="py-16 bg-purple-100 text-stone-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-medium text-center mb-12">Contato</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-medium mb-4">Envie uma mensagem</h3>
+                    <form id="contact-form" class="space-y-4" action="https://formsubmit.co/ajax/contato@priscilapiantanida.com.br" method="POST">
+                         <input type="hidden" name="_subject" value="Novo contato do site">
+                        <input type="hidden" name="_next" value="https://priscilapiantanida.com.br/thank-you.html">
+                        <div>
+                            <label for="name" class="block mb-1">Nome</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded border border-purple-300 bg-white text-stone-800 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded border border-purple-300 bg-white text-stone-800 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 rounded border border-purple-300 bg-white text-stone-800 placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        </div>
+                        <button type="submit" class="px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors">
+                            Enviar
+                        </button>
+                    </form>
+                    
+                    <script>
+                        document.getElementById('contact-form').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            
+                            const form = this;
+                            const formData = new FormData(form);
+                            
+                            if (!validateForm(form)) {
+                                return;
+                            }
+
+                            // Show loading indicator
+                            Swal.fire({
+                                title: 'Enviando mensagem...',
+                                allowOutsideClick: false,
+                                showConfirmButton: false,
+                                didOpen: () => {
+                                    Swal.showLoading();
+                                }
+                            });
+                            
+                            // Use Ajax endpoint and JSON format
+                            fetch(form.action, {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            })
+                            .then(response => {
+                                if (!response.ok) throw new Error('Network response was not ok');
+                                return response.json();
+                            })
+                            .then(data => {
+                                if (data.success) {
+                                    Swal.fire({
+                                        title: 'Mensagem enviada com sucesso!',
+                                        text: 'Obrigado pelo seu contato. Responderei em breve.',
+                                        icon: 'success',
+                                        confirmButtonText: 'OK'
+                                    });
+                                    form.reset();
+                                } else {
+                                    throw new Error(data.message || 'Submission failed');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                Swal.fire({
+                                    title: 'Erro no envio',
+                                    text: 'Houve um problema ao enviar sua mensagem. Por favor, verifique sua conexão e tente novamente ou entre em contato diretamente pelo email contato@priscilapiantanida.com.br',
+                                    icon: 'error',
+                                    confirmButtonText: 'Entendi'
+                                });
+                            });
+                        });
+
+                        function validateForm(form) {
+                            const name = form.elements['name'].value.trim();
+                            const email = form.elements['email'].value.trim();
+                            const message = form.elements['message'].value.trim();
+                            
+                            if (!name) {
+                                showValidationError('Por favor, informe seu nome');
+                                return false;
+                            }
+                            
+                            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                                showValidationError('Por favor, informe um email válido');
+                                return false;
+                            }
+                            
+                            if (!message || message.length < 10) {
+                                showValidationError('Por favor, escreva uma mensagem com pelo menos 10 caracteres');
+                                return false;
+                            }
+                            
+                            return true;
+                        }
+
+                        function showValidationError(message) {
+                            Swal.fire({
+                                title: 'Campos inválidos',
+                                text: message,
+                                icon: 'error',
+                                confirmButtonText: 'Entendi'
+                            });
+                        }
+                    </script>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-medium mb-4">Links e redes</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://www.instagram.com/priscilapiantanida/" target="_blank" class="flex items-center hover:text-purple-600 transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/priscila-piantanida-3486bb56/" target="_blank" class="flex items-center hover:text-purple-600 transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/priscila.piantanida" target="_blank" class="flex items-center hover:text-purple-600 transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                                </svg>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://lattes.cnpq.br/5950985789157903" target="_blank" class="flex items-center hover:text-purple-600 transition-colors">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                                Currículo Lattes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-stone-800 text-stone-300 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-2">&copy; 2025 Priscila Piantanida. Todos os direitos reservados.</p>
+            <p class="text-sm">Desenvolvido com ♥ e respeito à natureza.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Lightbox functions for About section
+        let aboutCurrentSlide = 0;
+        const aboutSlides = document.querySelectorAll('#lightbox .slide');
+        
+        function openLightbox() {
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showAboutSlide(aboutCurrentSlide);
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showAboutSlide(index) {
+            aboutSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextAboutSlide() {
+            aboutCurrentSlide = (aboutCurrentSlide + 1) % aboutSlides.length;
+            showAboutSlide(aboutCurrentSlide);
+        }
+        
+        function prevAboutSlide() {
+            aboutCurrentSlide = (aboutCurrentSlide - 1 + aboutSlides.length) % aboutSlides.length;
+            showAboutSlide(aboutCurrentSlide);
+        }
+        
+        // Close lightbox when clicking outside content
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Eco_operação Lightbox functions
+        let ecoCurrentSlide = 0;
+        const ecoSlides = document.querySelectorAll('#eco-lightbox .slide');
+        
+        function openEcoLightbox() {
+            document.getElementById('eco-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showEcoSlide(ecoCurrentSlide);
+        }
+        
+        function closeEcoLightbox() {
+            document.getElementById('eco-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showEcoSlide(index) {
+            ecoSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextEcoSlide() {
+            ecoCurrentSlide = (ecoCurrentSlide + 1) % ecoSlides.length;
+            showEcoSlide(ecoCurrentSlide);
+        }
+        
+        function prevEcoSlide() {
+            ecoCurrentSlide = (ecoCurrentSlide - 1 + ecoSlides.length) % ecoSlides.length;
+            showEcoSlide(ecoCurrentSlide);
+        }
+        
+        // Close lightbox when clicking outside content
+        document.getElementById('eco-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEcoLightbox();
+            }
+        });
+
+        // Horta Urbana Lightbox functions
+        let hortaCurrentSlide = 0;
+        const hortaSlides = document.querySelectorAll('#horta-lightbox .slide');
+        
+        function openHortaLightbox() {
+            document.getElementById('horta-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showHortaSlide(hortaCurrentSlide);
+        }
+        
+        function closeHortaLightbox() {
+            document.getElementById('horta-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showHortaSlide(index) {
+            hortaSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextHortaSlide() {
+            hortaCurrentSlide = (hortaCurrentSlide + 1) % hortaSlides.length;
+            showHortaSlide(hortaCurrentSlide);
+        }
+        
+        function prevHortaSlide() {
+            hortaCurrentSlide = (hortaCurrentSlide - 1 + hortaSlides.length) % hortaSlides.length;
+            showHortaSlide(hortaCurrentSlide);
+        }
+        
+        // Close lightbox when clicking outside content
+        document.getElementById('horta-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeHortaLightbox();
+            }
+        });
+
+        // Pirâmide Cristalina Lightbox functions
+        let piramideCurrentSlide = 0;
+        const piramideSlides = document.querySelectorAll('#piramide-lightbox .slide');
+        
+        function openPiramideLightbox() {
+            document.getElementById('piramide-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showPiramideSlide(piramideCurrentSlide);
+        }
+        
+        function closePiramideLightbox() {
+            document.getElementById('piramide-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showPiramideSlide(index) {
+            piramideSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextPiramideSlide() {
+            piramideCurrentSlide = (piramideCurrentSlide + 1) % piramideSlides.length;
+            showPiramideSlide(piramideCurrentSlide);
+        }
+        
+        function prevPiramideSlide() {
+            piramideCurrentSlide = (piramideCurrentSlide - 1 + piramideSlides.length) % piramideSlides.length;
+            showPiramideSlide(piramideCurrentSlide);
+        }
+        
+        // Close lightbox when clicking outside content
+        document.getElementById('piramide-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePiramideLightbox();
+            }
+        });
+
+        // Aliança Cristalina Lightbox functions
+        let aliancaCurrentSlide = 0;
+        const aliancaSlides = document.querySelectorAll('#alianca-lightbox .slide');
+        
+        function openAliancaLightbox() {
+            document.getElementById('alianca-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showAliancaSlide(aliancaCurrentSlide);
+        }
+        
+        function closeAliancaLightbox() {
+            document.getElementById('alianca-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showAliancaSlide(index) {
+            aliancaSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextAliancaSlide() {
+            aliancaCurrentSlide = (aliancaCurrentSlide + 1) % aliancaSlides.length;
+            showAliancaSlide(aliancaCurrentSlide);
+        }
+        
+        function prevAliancaSlide() {
+            aliancaCurrentSlide = (aliancaCurrentSlide - 1 + aliancaSlides.length) % aliancaSlides.length;
+            showAliancaSlide(aliancaCurrentSlide);
+        }
+        
+        document.getElementById('alianca-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAliancaLightbox();
+            }
+        });
+
+        // Escada Viva Lightbox functions
+        let escadaCurrentSlide = 0;
+        const escadaSlides = document.querySelectorAll('#escada-lightbox .slide');
+        
+        function openEscadaLightbox() {
+            document.getElementById('escada-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showEscadaSlide(escadaCurrentSlide);
+        }
+        
+        function closeEscadaLightbox() {
+            document.getElementById('escada-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showEscadaSlide(index) {
+            escadaSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextEscadaSlide() {
+            escadaCurrentSlide = (escadaCurrentSlide + 1) % escadaSlides.length;
+            showEscadaSlide(escadaCurrentSlide);
+        }
+        
+        function prevEscadaSlide() {
+            escadaCurrentSlide = (escadaCurrentSlide - 1 + escadaSlides.length) % escadaSlides.length;
+            showEscadaSlide(escadaCurrentSlide);
+        }
+        
+        document.getElementById('escada-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEscadaLightbox();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (!document.getElementById('eco-lightbox').classList.contains('hidden')) {
+                    closeEcoLightbox();
+                }
+                if (!document.getElementById('residencia-lightbox').classList.contains('hidden')) {
+                    closeResidenciaLightbox();
+                }
+                if (!document.getElementById('horta-lightbox').classList.contains('hidden')) {
+                    closeHortaLightbox();
+                }
+                if (!document.getElementById('piramide-lightbox').classList.contains('hidden')) {
+                    closePiramideLightbox();
+                }
+                if (!document.getElementById('mutatis-lightbox').classList.contains('hidden')) {
+                    closeMutatisLightbox();
+                }
+                if (!document.getElementById('teresopolis-lightbox').classList.contains('hidden')) {
+                    closeTeresopolisLightbox();
+                }
+            }
+        });
+
+        // Mutatis Mutandis Lightbox functions
+        let mutatisCurrentSlide = 0;
+        const mutatisSlides = document.querySelectorAll('#mutatis-lightbox .slide');
+        
+        function openMutatisLightbox() {
+            document.getElementById('mutatis-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showMutatisSlide(mutatisCurrentSlide);
+        }
+        
+        function closeMutatisLightbox() {
+            document.getElementById('mutatis-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showMutatisSlide(index) {
+            mutatisSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextMutatisSlide() {
+            mutatisCurrentSlide = (mutatisCurrentSlide + 1) % mutatisSlides.length;
+            showMutatisSlide(mutatisCurrentSlide);
+        }
+        
+        function prevMutatisSlide() {
+            mutatisCurrentSlide = (mutatisCurrentSlide - 1 + mutatisSlides.length) % mutatisSlides.length;
+            showMutatisSlide(mutatisCurrentSlide);
+        }
+        
+        document.getElementById('mutatis-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMutatisLightbox();
+            }
+        });
+
+        // Teresópolis SESC Lightbox functions
+        let teresopolisCurrentSlide = 0;
+        const teresopolisSlides = document.querySelectorAll('#teresopolis-lightbox .slide');
+        
+        function openTeresopolisLightbox() {
+            document.getElementById('teresopolis-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showTeresopolisSlide(teresopolisCurrentSlide);
+        }
+        
+        function closeTeresopolisLightbox() {
+            document.getElementById('teresopolis-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showTeresopolisSlide(index) {
+            teresopolisSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        function nextTeresopolisSlide() {
+            teresopolisCurrentSlide = (teresopolisCurrentSlide + 1) % teresopolisSlides.length;
+            showTeresopolisSlide(teresopolisCurrentSlide);
+        }
+        
+        function prevTeresopolisSlide() {
+            teresopolisCurrentSlide = (teresopolisCurrentSlide - 1 + teresopolisSlides.length) % teresopolisSlides.length;
+            showTeresopolisSlide(teresopolisCurrentSlide);
+        }
+        
+        document.getElementById('teresopolis-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeTeresopolisLightbox();
+            }
+        });
+
+        // Residência Artística Lightbox functions
+        let residenciaCurrentSlide = 0;
+        const residenciaSlides = document.querySelectorAll('#residencia-lightbox .slide');
+        
+        function openResidenciaLightbox() {
+            document.getElementById('residencia-lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showResidenciaSlide(residenciaCurrentSlide);
+        }
+        
+        function closeResidenciaLightbox() {
+            document.getElementById('residencia-lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Pause video when closing lightbox
+            const video = residenciaSlides[14]?.querySelector('video');
+            video?.pause();
+        }
+        
+        function showResidenciaSlide(index) {
+            residenciaSlides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                // Video slide handling removed - user must click play manually
+            });
+        }
+        
+        function nextResidenciaSlide() {
+            // Pause video if currently playing
+            const videoSlide = residenciaSlides[14];
+            if (videoSlide && videoSlide.classList.contains('active')) {
+                const video = videoSlide.querySelector('video');
+                if (video) {
+                    video.pause();
+                }
+            }
+            residenciaCurrentSlide = (residenciaCurrentSlide + 1) % residenciaSlides.length;
+            showResidenciaSlide(residenciaCurrentSlide);
+        }
+        
+        function prevResidenciaSlide() {
+            // Pause video if currently playing
+            const videoSlide = residenciaSlides[14];
+            if (videoSlide && videoSlide.classList.contains('active')) {
+                const video = videoSlide.querySelector('video');
+                if (video) {
+                    video.pause();
+                }
+            }
+            residenciaCurrentSlide = (residenciaCurrentSlide - 1 + residenciaSlides.length) % residenciaSlides.length;
+            showResidenciaSlide(residenciaCurrentSlide);
+        }
+        
+        // Close lightbox when clicking outside content
+        document.getElementById('residencia-lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeResidenciaLightbox();
+                // Pause video when clicking outside
+                const videoSlide = residenciaSlides[14];
+                if (videoSlide) {
+                    const video = videoSlide.querySelector('video');
+                    if (video) {
+                        video.pause();
+                    }
+                }
+            }
+        });
+
+        // Smooth scroll for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=cosmic-studio/priscila-piantanida" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>

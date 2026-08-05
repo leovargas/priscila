@@ -1,0 +1,4 @@
+faça com que todos os espaços para imagens abram um lightbox com slideshow
+crie um lightbox independente ao clicar na imagem (do lado esquerdo) referente ao texto  Priscila Piantanida Artista-pesquisadora, escultora ambiental e social. (Brasil-Chile, nascida em 1981)
+centralize o lightbox criado
+adicione opção de 5 imagens no slideshow criado pelo lightbox
